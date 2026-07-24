@@ -1,0 +1,30 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: cpp-agent-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - backend_data:/app/data
+      - uploads_data:/app/app/static/uploads
+    env_file:
+      - ./backend/.env
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: cpp-agent-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    stop_grace_period: 2s
+    restart: unless-stopped
+
+volumes:
+  backend_data:
+  uploads_data:

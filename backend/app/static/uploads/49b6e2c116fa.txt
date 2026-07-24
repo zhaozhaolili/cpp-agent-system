@@ -1,0 +1,1 @@
+C++ virtual functions enable polymorphism.

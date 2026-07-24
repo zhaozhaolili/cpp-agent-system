@@ -1,0 +1,24 @@
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+sqlalchemy>=2.0.23
+python-dotenv>=1.0.0
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-multipart>=0.0.6
+pydantic>=2.7.0
+pydantic-settings>=2.1.0
+httpx>=0.25.0
+aiofiles>=23.0.0
+
+# RAG / Document Processing
+chromadb>=0.4.0
+langchain>=0.2.0
+langchain-community>=0.2.0
+pypdf>=3.0.0
+python-docx>=1.0.0
+python-pptx>=0.6.0
+openpyxl>=3.0.0
+olefile>=0.47
+
+# Local Embedding (optional — for better Chinese embedding, otherwise Chroma ONNX is used)
+# sentence-transformers>=2.7.0
